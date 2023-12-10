@@ -8,40 +8,47 @@
 
 <body>	
 	<script>
-		function secondHighest(arr) {
-			//Write your code here
-			
-		}
-
 		function Main() {
-			var n = prompt("Enter the number of elements");
-			var arr = [];
-			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
-			}
-			alert(secondHighest(arr));
-		}
-		Main();
-		function secondHighest(arr) {
-			if(arr.length<=1 || isSame(arr)){
-				return "-infinity";
-			}
-			else{
-				let max = arr[0]
-				let mx1 = arr.map(element){
-					return max>element?max:element;
-				}
-				let mx2 = arr.map(element){
-					return element<mx1?elemetn:mx1;
-				}
-				return mx2;
-			}
+    var n = prompt("Enter the number of elements");
+    var arr = [];
+    for (var i = 0; i < n; i++) {
+        arr[i] = prompt("Enter element " + (i+1));
+    }
+    alert(secondHighest(arr));
+    secondHighest(arr);
+}
+Main();
+function secondHighest(arr) {
+    if(arr.length<=1 || isSame(arr)){
+        console.log("-infinity") ;
+    }
+    else{
+        
+        let max = arr.reduce((ele1,ele2)=>{
+            return ele1>ele2?ele1:ele2;
+        })
+        // console.log(max);
 
-			
-		}
-		function isSame(arr) {
-			return arr.every(elemetn) => elemetn === arr[0]);
-		}
+        let mx = Number.MIN_VALUE;
+        for(let i=0;i<arr.length;i++){
+            if(arr[i] === max){
+                
+            }
+            else{
+                mx = Math.max(arr[i],mx);
+            }
+        }
+        
+        // console.log(mx);
+         return mx;
+
+    }
+
+    
+}
+function isSame(arr) {
+    return arr.every((elemetn) => elemetn === arr[0]);
+}
 
 		
 		
