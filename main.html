@@ -22,6 +22,29 @@
 			alert(secondHighest(arr));
 		}
 		Main();
+		function secondHighest(arr) {
+			if(arr.length<=1 || isSame(arr)){
+				return "-infinity";
+			}
+			else{
+				let max = arr[0]
+				let mx1 = arr.map(element){
+					return max>element?max:element;
+				}
+				let mx2 = arr.map(element){
+					return element<mx1?elemetn:mx1;
+				}
+				return mx2;
+			}
+
+			
+		}
+		function isSame(arr) {
+			return arr.every(elemetn) => elemetn === arr[0]);
+		}
+
+		
+		
 	</script>
 
     <script type="text/javascript" src="./script.js">
