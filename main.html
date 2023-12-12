@@ -8,44 +8,28 @@
 
 <body>	
 	<script>
+		function secondHighest(arr) {
+			let first = -Infinity, second = -Infinity;
+			for (let i = 0; i < arr.length; i++) {
+				if (arr[i] > first) {
+				second = first;
+				first = arr[i];
+				} else if (arr[i] > second && arr[i] < first) {
+				second = arr[i];
+				}
+			}
+			return second;
+		}
+
 		function Main() {
-		    var n = prompt("Enter the number of elements");
-		    var arr = [];
-		    for (var i = 0; i < n; i++) {
-		        arr[i] = prompt("Enter element " + (i+1));
-		    }
-		    alert(secondHighest(arr));
-		    secondHighest(arr);
+			var n = prompt("Enter the number of elements");
+			var arr = [];
+			for (var i = 0; i < n; i++) {
+				arr[i] = prompt("Enter element " + (i+1));
+			}
+			alert(secondHighest(arr));
 		}
 		Main();
-		function secondHighest(arr) {
-		    if(arr.length<=1 || isSame(arr)){
-		        return "-Infinity" ;
-		    }
-		    else{
-		        let max = arr.reduce((ele1,ele2)=>{
-		            return ele1>ele2?ele1:ele2;
-		        })
-		        // console.log(max);
-		
-		        let mx = Number.MIN_VALUE;
-		        for(let i=0;i<arr.length;i++){
-		            if(arr[i] === max){
-						
-		            }
-		            else{
-		                mx = Math.max(arr[i],mx);
-		            }
-		        }
-		        
-		        // console.log(mx);
-		         return mx;
-		
-		    }
-		}
-		function isSame(arr) {
-		    return arr.every((elemetn) => elemetn === arr[0]);
-		}
 	</script>
     <script type="text/javascript" src="./script.js">
 </script>
